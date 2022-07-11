@@ -8,10 +8,7 @@ import 'features/todo/cubit/todo_cubit.dart';
 import 'features/todo/todo_repository_impl.dart';
 
 void main() {
-  BlocOverrides.runZoned(
-    () => const MyApp(),
-    blocObserver: TodoBlocObserver(),
-  );
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -21,6 +18,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'BloC Pattern Example',
       theme: ThemeData(
         primarySwatch: Colors.blue,
